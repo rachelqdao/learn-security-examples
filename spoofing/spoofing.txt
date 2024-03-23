@@ -1,1 +1,6 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability originates from the session's cookie being accessible via the httpOnly attribute being set to false. Cross site scripting attackes can hijack user's session cookies and make malicious requests to endpoints on their behalf.
+The secure version prevents this vulnerability because the httpOnly attribute is set to true. What this does is limit cookie access exclusively to HTTP requests, blocking any scripts from accessing it, hence 'spoofing'. 
+Furthermore, the attribute sameSite is also set to true ensuring that cookies are only sent by the browser to requests originating from the same site.
+The CIA property that spoofing violates is the Confidentiality principle. The data is not being secured by because there is some way for it to be accessible to unauthorized users.

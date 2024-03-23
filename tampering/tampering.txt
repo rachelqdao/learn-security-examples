@@ -1,0 +1,4 @@
+The vulnerability originates from misuse of user input, more specifically the lack of cleaning user input data. 
+The insecure version does not attempt to sanitize a username when registering and simply executes. This leaves the potential open for an attacker to inject some kind of malicious script. 
+The secure version uses the escapeHTML function which converts characters such as "<" and ">" to their html equivalents, "&lt" or "&gt" to prevent this
+The CIA property that tampering violates is Integrity. The data cannot be guaranteed to have not been uncorrupted during storage, transmission or processing as there is an potential from to tamper with data from the outside.
