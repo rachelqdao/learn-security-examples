@@ -1,0 +1,6 @@
+The vulnerability originates from the lack of user verification / authentication. 
+The insecure version currently authenticates users based on their own provided input. 
+If any user got their hands on an admin's userID, they essentially have administrative powers as there is no way to validate that they are the actual admin hence 'privilege escalation'.
+The secure version uses sessions to verify the user's identity as a way to prevent the vulnerability -- requesting the userID from the session and then checking if that user's role is 'admin' before allowing them to change user roles.
+Additional security mechanisms that can be incorporated to prevent such attacks include sanitizing input as accepted in the insecure version. 
+However, a more secure way is to implement the use of a secure session and cookies.

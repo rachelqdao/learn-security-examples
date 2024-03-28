@@ -1,3 +1,8 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
-Which CIA property does tampering violate?
+Which CIA property does infodisclosure violate?
 What additional security mechanisms can you incorporate?
+
+The vulnerability originates from using user provided values in the query without first performing some kind of sanitizing on the input.
+This leaves the application vulnerable to some kind of SQL injection, providing a query that exposes all usernames and passwords.
+Infodisclosure violates Confidentiality as there is some way for data to be accessible to unauthorized users.
+Some additional security mechanisms that can be incorporated is to never directly use user input in queries. Any user input should first be sanitized to ensure that it is not malicious and if it is, does not expose sensitive data.

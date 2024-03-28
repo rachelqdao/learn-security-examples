@@ -1,2 +1,11 @@
 - Briefly explain the vulnerability and why the secure version prevents the vulnerability.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability originates from the lack of being able handle input that will crash the server. 
+A DoS attack can possibly exploit this by continuously entering input until some input is deemed "bad" and cause the server to crash.
+In the secure version, bad input is handled in a try/catch block which won't crash the server and affect the server's availability -- violating the Availability principle.
+Additional security mechanisms that can be incorporated to prevent such attacks include again, sanitizing and validating user input. 
+The code is also still vulnerable as it needs to be able to handle massive amounts of requests or even large amounts of queries that are complex and in turn, slow.
+These can be resolved by implementing rate limiting or opting to deliver content through a CDN
+
+
