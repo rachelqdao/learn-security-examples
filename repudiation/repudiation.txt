@@ -1,2 +1,10 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+The vulnerability originates from the lack of credible logging system in order to keep track of user messages.
+In the insecure version, user can post messages under the guise of any userID that is not their own. This makes the log unreliable as there is no way to tell who the real poster is.
+Furthermore, the information logged is not as detailed as it only contains userID and the message.
+The secure version should use a session to authenticate and validate a user's identity before logging anything. 
+It also logs more detailed information such as the date, request method / url, user ip, to the log.
+Additional security mechanisms that can be incorporated include implementing a secure method of authentication in order ensure users are who they claim to be. 
+Furthermore, the logs need to be secured in a way that no users can tamper with them.
